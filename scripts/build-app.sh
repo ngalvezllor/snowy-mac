@@ -24,7 +24,7 @@ fi
 app_dir="$project_root/build/Snowy.app"
 if [[ -e "$app_dir" || -L "$app_dir" ]]; then
   if [[ -L "$app_dir" || ! -d "$app_dir" || ! -f "$app_dir/Contents/Info.plist" ]] \
-    || [[ "$(plutil -extract CFBundleIdentifier raw "$app_dir/Contents/Info.plist" 2>/dev/null || true)" != "app.snowy.desktop" ]]; then
+    || [[ "$(plutil -extract CFBundleIdentifier raw "$app_dir/Contents/Info.plist" 2>/dev/null || true)" != "app.snowy.mod" ]]; then
     print -u2 "Refusing to replace a bundle not identified as Snowy in build/."
     exit 1
   fi

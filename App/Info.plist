@@ -4,7 +4,7 @@
     <key>CFBundleName</key><string>Snowy</string>
     <key>CFBundleDisplayName</key><string>Snowy</string>
     <key>CFBundleExecutable</key><string>Snowy</string>
-    <key>CFBundleIdentifier</key><string>app.snowy.desktop</string>
+    <key>CFBundleIdentifier</key><string>app.snowy.mod</string>
     <key>CFBundlePackageType</key><string>APPL</string>
     <key>CFBundleIconFile</key><string>Snowy.icns</string>
     <key>CFBundleShortVersionString</key><string>0.11.3</string>
@@ -16,12 +16,11 @@
     <key>UTExportedTypeDeclarations</key>
     <array>
         <dict>
-            <key>UTTypeIdentifier</key><string>app.snowy.desktop.editor-card</string>
+            <key>UTTypeIdentifier</key><string>app.snowy.mod.editor-card</string>
             <key>UTTypeDescription</key><string>Snowy Editor Card</string>
             <key>UTTypeConformsTo</key><array><string>public.data</string></array>
         </dict>
     </array>
-    <key>SUFeedURL</key><string>https://github.com/soloiaros/snowy-mac/releases/latest/download/appcast.xml</string>
     <key>SUPublicEDKey</key><string>CpsBI13OBwIG3LPiEl2Rlo4M0BrynW+FhM8ScbL6/0Q=</string>
     <key>SURequireSignedFeed</key><true/>
     <key>SUVerifyUpdateBeforeExtraction</key><true/>

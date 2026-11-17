@@ -3,7 +3,7 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct SceneLibraryDrag {
-    static let contentType = UTType(exportedAs: "app.snowy.desktop.editor-card", conformingTo: .data)
+    static let contentType = UTType(exportedAs: "app.snowy.mod.editor-card", conformingTo: .data)
 
     let assetID: String
     let id = UUID()

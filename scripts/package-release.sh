@@ -28,7 +28,7 @@ if [[ -L "$project_root/build" || -L "$app_dir" || ! -d "$app_dir" || ! -f "$bin
   print -u2 "Missing build/Snowy.app. Run ./scripts/build-app.sh first."
   exit 1
 fi
-if [[ "$(plutil -extract CFBundleIdentifier raw "$app_dir/Contents/Info.plist" 2>/dev/null || true)" != "app.snowy.desktop" ]]; then
+if [[ "$(plutil -extract CFBundleIdentifier raw "$app_dir/Contents/Info.plist" 2>/dev/null || true)" != "app.snowy.mod" ]]; then
   print -u2 "Refusing to package a bundle not identified as Snowy."
   exit 1
 fi
