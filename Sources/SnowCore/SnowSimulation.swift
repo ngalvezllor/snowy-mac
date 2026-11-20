@@ -17,7 +17,9 @@ public final class SnowSimulation {
         didSet { if wind != oldValue { cornerWindDirty = true } }
     }
     public var tool: SnowTool = .glove
-
+    /// When false, a window's snow stays on that window instead of passing to a lower one.
+    public var handsOffSnowBetweenWindows = true
+    
     // Shared only by SnowCore implementation extensions; none of this state is public.
     var random: RandomSource
     private var previousCursor: SIMD2<Float>?
@@ -104,7 +106,7 @@ public final class SnowSimulation {
         let motions = persistentBodyMotions(to: bodies)
         // Hand-offs, scraping and ploughing model a window dragged by the pointer. System-driven
         // motion only carries each cap with its own window; covered parts stay hidden.
-        if userMotion {
+        if userMotion && handsOffSnowBetweenWindows {
             captureSupportTransfers(to: surfaces, motions: motions)
             captureCarriedSnowCollisions(to: surfaces, motions: motions)
         }

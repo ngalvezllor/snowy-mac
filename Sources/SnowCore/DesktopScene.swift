@@ -285,7 +285,7 @@ slope: tilts[record.id]?.top ?? 0))
         switch record.role {
         case .spotlight: radius = 28
         case .widget: radius = 22
-        case .dock: radius = appearance == .modern ? min(16, Float(record.bounds.height) / 3) : 12
+        case .dock: radius = appearance == .modern ? Float(record.bounds.height) * 0.42 : 12
         case .iphoneMirroring: radius = 54
         case .application: radius = appearance == .modern && record.layer == 0 ? 26 : 12
         case .desktop, .other: radius = 0
@@ -327,9 +327,15 @@ slope: tilts[record.id]?.top ?? 0))
         } else {
             wantedLength = CGFloat(hint.itemCount) * (CGFloat(hint.tileSize) + 6) + 24
         }
-        let length = min(available, wantedLength)
+        var length = min(available, wantedLength)
+        var left = display.minX + (display.width - length) / 2
+        if let measured = hint.measuredFrame, measured.minX >= display.minX - 1,
+           measured.maxX <= display.maxX + 1, abs(measured.maxY - display.maxY) < 12 {
+            length = measured.width
+            left = measured.minX
+        }
         guard length >= 32 else { return nil }
-        return CGRect(x: display.minX + (display.width - length) / 2,
+        return CGRect(x: left,
                       y: display.maxY - CGFloat(inset), width: length, height: thickness)
     }
 

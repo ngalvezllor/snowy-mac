@@ -85,13 +85,16 @@ public struct DockLayoutHint: Sendable {
     public let itemCount: Int
     public let autoHides: Bool
     public let hasRecentSection: Bool
+    /// The Dock's reserved room as reported by the system, when known. Replaces the width estimate.
+    public let measuredFrame: CGRect?
 
     public init(orientation: Orientation, tileSize: Float, itemCount: Int, autoHides: Bool = false,
-                hasRecentSection: Bool = false) {
+                    hasRecentSection: Bool = false, measuredFrame: CGRect? = nil) {
         self.orientation = orientation
         self.tileSize = tileSize.isFinite ? max(16, min(128, tileSize)) : 48
         self.itemCount = max(1, min(80, itemCount))
         self.autoHides = autoHides
         self.hasRecentSection = hasRecentSection
+        self.measuredFrame = measuredFrame
     }
 }

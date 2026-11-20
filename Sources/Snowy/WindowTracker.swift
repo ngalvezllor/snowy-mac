@@ -164,7 +164,8 @@ final class WindowTracker {
                 let tile = (preferences?.object(forKey: "tilesize") as? NSNumber)?.floatValue ?? 48
                 let autoHides = (preferences?.object(forKey: "autohide") as? NSNumber)?.boolValue ?? false
                 dockLayout = DockLayoutHint(orientation: orientation, tileSize: tile, itemCount: count,
-                                            autoHides: autoHides, hasRecentSection: !recent.isEmpty)
+                                            autoHides: autoHides, hasRecentSection: !recent.isEmpty,
+                                            measuredFrame: DockRoom.rect())
             } else { dockLayout = nil }
         }
         let processRoles = roles
