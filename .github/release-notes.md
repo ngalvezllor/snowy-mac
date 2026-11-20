@@ -1,8 +1,9 @@
 Snowy brings interactive snow to window edges, desktop widgets, Spotlight, and a bottom-positioned Dock.
 
+- **Crosswind Snowfall Entry**: Snow now naturally blows in from the upwind screen edge during horizontal winds (in addition to falling from the ceiling), maintaining a realistic, uniform snowfall distribution across the entire screen instead of leaving an empty wedge along the upwind border.
 - **Window Tiling & System Arrangement Support**: Snow caps now remain smoothly attached to their windows during macOS Sequoia tiling shortcuts, Stage Manager arrangements, and minimize genie animations, rather than scraping off or detaching into loose snow.
 - **Instant Window Close Detection**: Snowy now detects closed and hidden windows almost instantaneously (~150 ms idle cadence + immediate app lifecycle notifications), eliminating lingering snow caps after windows close.
-- **iPhone Mirroring Alignment**: Snow naturally settles along the curved top bezel and rounded corners of the iPhone Mirroring window, rather than floating 40 pt in mid-air above the window chrome.
+- **iPhone Mirroring Alignment**: Snow naturally settles along the curved top bezel and rounded corners of the iPhone Mirroring window, rather than floating in mid-air above the window chrome.
 - **Stable Widget Light Anchors**: Christmas lights pinned to desktop widgets reliably stay attached across widget content updates, background view refreshes, and system restarts.
 - **Immediate Update Notifications**: Snowy automatically checks for updates whenever you open the status menu or settings window, as well as on wake from sleep, so update notifications appear without restarting the app.
 - **In-App Release Notes & Quick Update**: Access release highlights and install updates with one click directly from the Snowy window sidebar.

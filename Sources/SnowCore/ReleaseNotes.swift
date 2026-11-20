@@ -145,6 +145,16 @@ public enum ReleaseNotesParser {
 extension ReleaseNote {
     public static let bundledReleases: [ReleaseNote] = [
         ReleaseNote(
+            id: "v0.11.4",
+            version: "0.11.4",
+            title: "Snowy v0.11.4",
+            publishedAt: ISO8601DateFormatter().date(from: "2026-11-19T18:10:00Z"),
+            highlights: [
+                "Crosswind snowfall entry: Snow now enters from the upwind screen edge during horizontal winds in addition to the ceiling, keeping snowfall density uniform across the entire desktop."
+            ],
+            htmlURL: URL(string: "https://github.com/soloiaros/snowy-mac/releases/tag/v0.11.4")
+        ),
+        ReleaseNote(
             id: "v0.11.3",
             version: "0.11.3",
             title: "Snowy v0.11.3",
